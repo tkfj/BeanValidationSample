@@ -13,9 +13,7 @@ public class ValidationSample {
         ValidatorFactory validatorFactory = Validation
                 .buildDefaultValidatorFactory();
         Validator validator = validatorFactory.getValidator();
-        Bean bean = new Bean();
-        bean.setZero("1");
-
+        Bean bean = new Bean("1");
         Set<ConstraintViolation<Bean>> violations = validator.validate(bean);
         for (ConstraintViolation<Bean> violation : violations) {
             System.out.println(violation.getMessage());
